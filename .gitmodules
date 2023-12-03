@@ -2,3 +2,6 @@
 	path = projects/shell-mf
 	url = git@github.com:monstryf/shell-mf.git
   branch = main
+[submodule "projects/shared-mf"]
+	path = projects/shared-mf
+	url = git@github.com:monstryf/shared-mf.git
