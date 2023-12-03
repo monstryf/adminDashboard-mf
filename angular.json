@@ -20,18 +20,14 @@
             "outputPath": "dist/admin-dashboard",
             "index": "projects/admin-dashboard/src/index.html",
             "main": "projects/admin-dashboard/src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "projects/admin-dashboard/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               "projects/admin-dashboard/src/favicon.ico",
               "projects/admin-dashboard/src/assets"
             ],
-            "styles": [
-              "projects/admin-dashboard/src/styles.scss"
-            ],
+            "styles": ["projects/admin-dashboard/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -82,20 +78,139 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "projects/admin-dashboard/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               "projects/admin-dashboard/src/favicon.ico",
               "projects/admin-dashboard/src/assets"
             ],
-            "styles": [
-              "projects/admin-dashboard/src/styles.scss"
-            ],
+            "styles": ["projects/admin-dashboard/src/styles.scss"],
             "scripts": []
+          }
+        }
+      }
+    },
+    "shell-mf": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/shell-mf",
+      "sourceRoot": "projects/shell-mf/src",
+      "prefix": "shell",
+      "architect": {
+        "build": {
+          "builder": "ngx-build-plus:browser",
+          "options": {
+            "outputPath": "dist/shell-mf",
+            "index": "projects/shell-mf/src/index.html",
+            "main": "projects/shell-mf/src/main.ts",
+            "polyfills": ["zone.js"],
+            "tsConfig": "projects/shell-mf/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/shell-mf/src/favicon.ico",
+              "projects/shell-mf/src/assets"
+            ],
+            "styles": [
+              "node_modules/@fortawesome/fontawesome-free/css/all.css",
+              "node_modules/@fortawesome/fontawesome-free/css/brands.css",
+              "node_modules/@fortawesome/fontawesome-free/css/solid.css",
+              "projects/shell-mf/src/assets/css/animate.css",
+              "projects/shell-mf/src/assets/icons/ionic/ionicons.css",
+              "projects/shell-mf/src/assets/icons/material/materialdesignicons.css",
+              "projects/shell-mf/src/assets/icons/pe7/pe-icon-7.css",
+              "projects/shell-mf/src/assets/icons/themify/themify.css",
+              "projects/shell-mf/src/assets/icons/typicons/typicons.css",
+              "projects/shell-mf/src/assets/icons/weather/weathericons.css",
+              "projects/shell-mf/src/assets/icons/flags/flags.css",
+              "projects/shell-mf/src/assets/icons/simpleline/simple-line-icons.css",
+              "projects/shell-mf/src/assets/icons/feather/css/iconfont.css",
+              "node_modules/ngx-lightbox/lightbox.css",
+              "node_modules/ngx-toastr/toastr.css",
+              "node_modules/bootstrap/dist/css/bootstrap.rtl.min.css",
+              "projects/shell-mf/src/styles.scss"
+            ],
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ],
+            "extraWebpackConfig": "projects/shell-mf/webpack.config.js",
+            "commonChunk": false
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "extraWebpackConfig": "projects/shell-mf/webpack.prod.config.js",
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "ngx-build-plus:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "shell-mf:build:production",
+              "extraWebpackConfig": "projects/shell-mf/webpack.prod.config.js"
+            },
+            "development": {
+              "browserTarget": "shell-mf:build:development"
+            }
+          },
+          "defaultConfiguration": "development",
+          "options": {
+            "port": 15000,
+            "publicHost": "http://localhost:15000",
+            "extraWebpackConfig": "projects/shell-mf/webpack.config.js"
+          }
+        },
+        "extract-i18n": {
+          "builder": "ngx-build-plus:extract-i18n",
+          "options": {
+            "browserTarget": "shell-mf:build",
+            "extraWebpackConfig": "projects/shell-mf/webpack.config.js"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": ["zone.js", "zone.js/testing"],
+            "tsConfig": "projects/shell-mf/tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/shell-mf/src/favicon.ico",
+              "projects/shell-mf/src/assets"
+            ],
+            "styles": ["projects/shell-mf/src/styles.scss"],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
           }
         }
       }
