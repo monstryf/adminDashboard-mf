@@ -1,3 +1,4 @@
 [submodule "projects/shell-mf"]
 	path = projects/shell-mf
 	url = git@github.com:monstryf/shell-mf.git
+  branch = main
