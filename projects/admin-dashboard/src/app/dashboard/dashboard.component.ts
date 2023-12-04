@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { MenuService } from 'projects/shell-mf/src/app/layout/menu/app.menu.service';
+import { Menu } from './model/menu';
+import { ShearedService } from 'projects/shared-mf/src/app/service/sheared.service';
 
 @Component({
   selector: 'admin-dashboard',
@@ -6,5 +9,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent {
-  constructor() {}
+  public menu: any[] = Menu;
+  constructor() {
+    localStorage.setItem('menu', JSON.stringify(this.menu));
+  }
+
+  ngOnInit() {}
 }
