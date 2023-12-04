@@ -32,7 +32,8 @@ module.exports = {
       name: "adminDashboard",
       filename: "remoteEntry.js",
       exposes: {
-        "./Component": "./projects/admin-dashboard/src/app/app.component.ts",
+        "./Module":
+          "./projects/admin-dashboard/src/app/dashboard/dashboard.module.ts",
       },
 
       // For hosts (please adjust)

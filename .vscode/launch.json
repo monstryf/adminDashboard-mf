@@ -31,7 +31,7 @@
   ],
   "compounds": [
     {
-      "name": "run auth and watch shell",
+      "name": "run adminDashboard and watch shell",
       "configurations": ["runShell", "runAdminDashboard"],
       "stopAll": true
     }
