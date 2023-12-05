@@ -13,9 +13,8 @@ import { Company } from '../../model/company';
   styleUrls: ['./company-list.component.scss'],
 })
 export class CompanyListComponent {
-  public company: Company[] = [];
   public paging: Paging = new Paging();
-  public selectedService!: any;
+  public selectedCompany: any;
   constructor(
     public translate: TranslatesService,
     private apiService: MicroServicesApiService
@@ -27,7 +26,7 @@ export class CompanyListComponent {
     const temp = this.tempData.filter(function (d) {
       return d.name.toLowerCase().indexOf(val) !== -1 || !val;
     });
-    this.company = temp;
+    this.paging.data = temp;
   }
   /**
    * Change Table Page
@@ -36,6 +35,10 @@ export class CompanyListComponent {
    */
   onPageChange(event: TablePageEvent) {
     var page = event.first / event.rows;
+    console.log(page + 1);
+    console.log(page);
+    console.log(event.rows);
+    console.log(event);
     this.apiService
       .getByPaging('company', 'get_all_company_by_paging', page + 1, event.rows)
       .pipe(
@@ -46,8 +49,8 @@ export class CompanyListComponent {
       .subscribe({
         next: (response) => {
           this.paging = response;
-          this.company = this.paging.data;
           this.tempData = this.paging.data;
+          console.log(this.paging);
         },
         error: (error) => {
           console.log(error);
@@ -56,7 +59,7 @@ export class CompanyListComponent {
   }
   getCompany() {
     this.apiService
-      .getByPaging('company', 'get_all_company_by_paging', 1, 10)
+      .getByPaging('company', 'get_all_company_by_paging', 1, 5)
       .pipe(
         map((response: any) => {
           return response;
@@ -65,7 +68,6 @@ export class CompanyListComponent {
       .subscribe({
         next: (response) => {
           this.paging = response.company;
-          this.company = this.paging.data;
           this.tempData = this.paging.data;
         },
         error: (error) => {
