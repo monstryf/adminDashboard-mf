@@ -6,6 +6,7 @@ import { map } from 'rxjs';
 import { MicroServicesApiService } from '../../../service/micro-services-api/micro-services-api.service';
 import { TablePageEvent } from 'primeng/table';
 import { Company } from '../../model/company';
+import { routes } from 'projects/shell-mf/src/app/shared/router/router';
 
 @Component({
   selector: 'admin-company-list',
@@ -15,6 +16,7 @@ import { Company } from '../../model/company';
 export class CompanyListComponent {
   public paging: Paging = new Paging();
   public selectedCompany: any;
+  public route = routes;
   constructor(
     public translate: TranslatesService,
     private apiService: MicroServicesApiService
@@ -35,10 +37,6 @@ export class CompanyListComponent {
    */
   onPageChange(event: TablePageEvent) {
     var page = event.first / event.rows;
-    console.log(page + 1);
-    console.log(page);
-    console.log(event.rows);
-    console.log(event);
     this.apiService
       .getByPaging('company', 'get_all_company_by_paging', page + 1, event.rows)
       .pipe(
@@ -50,7 +48,6 @@ export class CompanyListComponent {
         next: (response) => {
           this.paging = response;
           this.tempData = this.paging.data;
-          console.log(this.paging);
         },
         error: (error) => {
           console.log(error);

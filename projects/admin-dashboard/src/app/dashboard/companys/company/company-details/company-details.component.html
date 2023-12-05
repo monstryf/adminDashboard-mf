@@ -1,0 +1,270 @@
+<section>
+  <div class="grid">
+    <!--xl:col-9 lg:col-9 md:col-12 -->
+    <div class=" col-12">
+      <div class="card p-5 mb-3">
+        <div class="card-body">
+          <div class="grid">
+            <div
+              class=" xl:col-6 lg:col-7 md:col-7 col-12 flex flex-column justify-content-between border-container-lg">
+              <div class="user-avatar-section">
+                <div class="flex justify-content-start">
+                  <img class="img-fluid surface-border border-round-md" src="https://picsum.photos/200/300" height="110"
+                    width="110" alt="User avatar" />
+                  <div class="flex flex-column ml-3">
+                    <div class="user-info mb-2">
+                      <h4 class="mb-0">{{ company.name }}</h4>
+                      <span class="card-text">{{ company.email }}</span>
+                    </div>
+                    <div class="flex flex-wrap">
+                      <button pButton pRipple [label]="'public.edit'|translate" class="p-button-primary"></button>
+                      <button pButton pRipple [label]="'public.delete'|translate" class="p-button-danger ml-3"></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- <div class="flex align-items-center mt-3">
+                <div class="flex align-items-center mr-3">
+                  <div
+                    class="flex-initial flex align-items-center justify-content-center bg-primary-100 border-round-md"
+                    style="height: 2.714rem; width: 2.714rem">
+                    <i class="pi pi-dollar text-primary"></i>
+                  </div>
+                  <div class="mx-2">
+                    <h5 class="mb-0 text-base">23.3k</h5>
+                    <small>Monthly Sales</small>
+                  </div>
+                </div>
+                <div class="flex align-items-center">
+                  <div
+                    class="flex-initial flex align-items-center justify-content-center bg-green-100 border-round-md green"
+                    style="height: 2.714rem; width: 2.714rem">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="feather feather-trending-up text-green-400">
+                      <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                      <polyline points="17 6 23 6 23 12"></polyline>
+                    </svg>
+                  </div>
+                  <div class="mx-2">
+                    <h5 class="mb-0">$99.87K</h5>
+                    <small>Annual Profit</small>
+                  </div>
+                </div>
+              </div> -->
+            </div>
+            <div class="xl:col-6 lg:col-5 md:col-5 mt-2 xl:mt-0">
+              <div class="user-info-wrapper">
+                <div class="flex flex-wrap my-2">
+                  <div class="user-info-title w-8rem">
+                    <i class="pi pi-phone mx-1"></i>
+                    <span class="card-text user-info-title font-weight-bold mb-0">{{'public.phone'|translate}}</span>
+                  </div>
+                  <p class="card-text mb-0">{{company.phone}}</p>
+                </div>
+                <div class="flex flex-wrap my-2">
+                  <div class="user-info-title w-8rem">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="feather feather-check mx-1">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span class="card-text user-info-title font-weight-bold mb-0">{{'public.fax'|translate}}</span>
+                  </div>
+                  <p class="card-text mb-0">{{company.fax}}</p>
+                </div>
+                <div class="flex flex-wrap my-2">
+                  <div class="user-info-title w-8rem">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="feather feather-star mx-1">
+                      <polygon
+                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                      </polygon>
+                    </svg>
+                    <span class="card-text user-info-title font-weight-bold mb-0">{{'public.website'|translate}}</span>
+                  </div>
+                  <p class="card-text mb-0">{{company.webUrl}}</p>
+                </div>
+                <div class="flex flex-wrap my-2">
+                  <div class="user-info-title w-8rem">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="feather feather-flag mx-1">
+                      <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path>
+                      <line x1="4" y1="22" x2="4" y2="15"></line>
+                    </svg>
+                    <span class="card-text user-info-title font-weight-bold mb-0">{{'public.facebook'|translate}}</span>
+                  </div>
+                  <p class="card-text mb-0">{{company.faceBook}}</p>
+                </div>
+                <div class="flex flex-wrap">
+                  <div class="user-info-title w-8rem">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="feather feather-check mx-1">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span class="card-text user-info-title font-weight-bold mb-0">{{'public.status'|translate}}</span>
+                  </div>
+                  <p class="card-text mb-0">{{ company.status }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="xl:col-3 lg:col-3 md:col-4">
+      <div class="card border-primary">
+        <div class="flex justify-content-between align-items-center pt-75 pb-1">
+          <h5 class="mb-0">Current store</h5>
+          <span class="surface-100 border-round-sm text-sm p-1 font-semibold" data-toggle="tooltip" data-placement="top"
+            title="" data-original-title="Expiry Date">July 22, <span class="nextYear">2024</span>
+          </span>
+        </div>
+        <div class="card-body">
+          <div class="border-round-sm bg-primary-100 w-3rem text-center font-semibold">
+            <span>Basic</span>
+          </div>
+          <div class="py-2">
+            <div class="flex flex-wrap my-2">
+              <div class="user-info-title w-8rem">
+                <span class="card-text user-info-title font-weight-bold mb-0">5 Users</span>
+              </div>
+            </div>
+          </div>
+          <button pButton pRipple label="Upgrade store" class="p-button-primary w-full"></button>
+        </div>
+      </div>
+    </div> -->
+  </div>
+  <div class="card p-3">
+    <div class="card-header ">
+      <h4 class="card-title">
+        {{'company.branch' |translate}}
+      </h4>
+    </div>
+    <!-- <div class=" border-bottom-1"></div> -->
+    <div class="grid">
+      <div class="col-6 ">
+        <div class="flex flex-column ">
+          <div class="user-info-title w-8rem mx-1 mb-1 ">
+            <span class=" font-bold">{{'public.nameAr'|translate}}</span>
+          </div>
+          <p class="card-text mb-0">{{company.mainBranch.name}}</p>
+        </div>
+      </div>
+      <div class="col-6 ">
+        <div class="flex flex-column ">
+          <div class="user-info-title w-8rem mx-1 mb-1 ">
+            <span class=" font-bold">{{'public.nameEn'|translate}}</span>
+          </div>
+          <p class="card-text mb-0">{{company.mainBranch.nameEn}}</p>
+        </div>
+      </div>
+      <div class="col-6 ">
+        <div class="flex flex-column ">
+          <div class="user-info-title w-8rem mx-1 mb-1 ">
+            <span class=" font-bold">{{'company.branchType'|translate}}</span>
+          </div>
+          <p class="card-text mb-0">{{company.mainBranch.isMain?('company.branchType1'|translate):'company.branchType2'
+            |translate}}</p>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="flex flex-column ">
+          <div class="user-info-title w-8rem mx-1 mb-1 ">
+            <span class=" font-bold">{{'public.status'|translate}}</span>
+          </div>
+          <p class="card-text mb-0">{{company.mainBranch.status}}</p>
+        </div>
+      </div>
+      <div class="col-12 sm:col-6 md:col-6">
+        <div class="flex flex-column ">
+          <div class="user-info-title w-8rem mx-1 mb-1 ">
+            <span class=" font-bold">{{'public.descriptionAr'|translate}}</span>
+          </div>
+          <p class="card-text mb-0">{{company.mainBranch.description}}</p>
+        </div>
+      </div>
+      <div class="col-12 sm:col-6 md:col-6">
+        <div class="flex flex-column ">
+          <div class="user-info-title w-8rem mx-1 mb-1 ">
+            <span class=" font-bold">{{'public.descriptionEn'|translate}}</span>
+          </div>
+          <p class="card-text mb-0">{{company.mainBranch.descriptionEn}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- *ngIf="company.branch != null" -->
+  <div class="card" *ngIf="company.branch != null">
+    <div class="card-header">
+      <h4 class="card-title">{{'company.branches'|translate}}</h4>
+    </div>
+    <p-table #dt2 [value]="company.branch" dataKey="id" [showCurrentPageReport]="true"
+      currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [globalFilterFields]="[
+          'name',
+          'country.name',
+          'representative.name',
+          'status'
+        ]" [tableStyle]="{ 'min-width': '55rem' }">
+      <ng-template pTemplate="caption">
+        <div class="flex">
+          <span class="p-input-icon-left ml-auto">
+            <i class="pi pi-search"></i>
+            <input pInputText type="text" (keyup)="filterUpdate($event)" placeholder="Search keyword" />
+          </span>
+        </div>
+      </ng-template>
+      <ng-template pTemplate="header">
+        <tr>
+          <th style="min-width:15rem">Name</th>
+          <th style="min-width:15rem">English Name</th>
+          <th style="min-width:12rem">Phone</th>
+          <!-- <th>Country</th>
+          <th>City</th>
+          <th>Detail Address</th> -->
+          <th></th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-item>
+        <tr>
+          <td>
+            <span class="ml-1 vertical-align-middle">{{ item.name }}</span>
+          </td>
+          <td>
+            <span class="ml-1 vertical-align-middle">{{ item.nameEn }}</span>
+          </td>
+          <td>
+            <span class="ml-1 vertical-align-middle">{{
+              item.phoneNumber
+              }}</span>
+          </td>
+
+
+          <td>
+            <button pTooltip="view store" tooltipPosition="top" p-button
+              class="p-button p-button-rounded p-button-outlined p-button-info mr-2 h-3rem w-3rem align-items-center justify-content-center">
+              <i class="pi pi-info-circle text-xl"></i>
+            </button>
+            <button pTooltip="edit store" tooltipPosition="top" p-button
+              class="p-button p-button-rounded p-button-outlined p-button-success mr-2 h-3rem w-3rem align-items-center justify-content-center">
+              <i class="pi pi-pencil text-xl"></i>
+            </button>
+            <button pTooltip="delete store" tooltipPosition="top" p-button
+              class="p-button p-button-rounded p-button-outlined p-button-danger mr-2 h-3rem w-3rem align-items-center justify-content-center">
+              <i class="pi pi-trash text-xl">
+              </i></button>
+          </td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="emptymessage">
+        <tr>
+          <td colspan="5">No customers found.</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</section>

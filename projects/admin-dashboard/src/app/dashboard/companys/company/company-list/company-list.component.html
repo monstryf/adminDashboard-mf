@@ -31,9 +31,10 @@
       </div>
     </div>
   </ng-template>
-  <p-table #dt [value]="paging.data" [paginator]="true" [rows]="paging.pageSize" [totalRecords]="paging.totalItems"
-    [showCurrentPageReport]="true" [tableStyle]="{ 'min-width': '50rem' }"
-    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [rowsPerPageOptions]="[5, 10, 20]">
+  <p-table #dt [value]="paging.data" [paginator]="true" [rows]="paging.pageSize" [first]="paging.page-1"
+    [totalRecords]="paging.totalItems" [showCurrentPageReport]="true" [tableStyle]="{ 'min-width': '50rem' }"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+    [rowsPerPageOptions]="[5, 10, 20,25]">
 
     <ng-template pTemplate="header">
       <tr>
@@ -106,7 +107,7 @@
         <td>
           <div class=" text-center">
             <button pButton pRippl icon="pi pi-info" style="width: 40px; height: 40px;"
-              class="p-button-outlined mr-2"></button>
+              [routerLink]="route.companyDetails+company.id" class="p-button-outlined mr-2"></button>
             <button pButton pRippl icon="pi pi-pencil" routerLink="/modules/additem/personal"
               style="width: 40px; height: 40px;" class="p-button-outlined p-button-secondary mr-2"></button>
             <button pButton pRipple icon="pi pi-trash" style="width: 40px; height: 40px;"

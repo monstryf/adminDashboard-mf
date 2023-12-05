@@ -1,3 +1,5 @@
+import { Branch } from './branch';
+
 export class Company {
   id?: any;
   name?: string;
@@ -8,4 +10,6 @@ export class Company {
   faceBook?: string;
   logo?: string;
   status!: number;
+  mainBranch: Branch = new Branch();
+  branch: Branch[] = [];
 }
